@@ -1,0 +1,13 @@
+u=input('Enter the speed of the airplane');
+g=9.8;
+x=linspace(0,250,200);
+y=(1/4)*log(cosh((exp(4*x)-1)/(u*4))*sqrt(g*4));
+y1=(1/0.4)*log(cosh((exp(0.4*x)-1)/(u*0.4))*sqrt(g*0.4));
+y2=(1/0.04)*log(cosh((exp(0.04*x)-1)/(u*0.04))*sqrt(g*0.04));
+h1=axes;
+plot(x,y,x,y1,x,y2);
+set(h1, 'Ydir', 'reverse');
+xlabel('Horizontal distance (in meters)');
+ylabel('Vertical distance (in meters)');
+ylim([0 200]);
+legend('k=4','k=0.4','k=0.04');
